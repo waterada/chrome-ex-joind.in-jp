@@ -83,9 +83,8 @@ if ( url.match(/\/joind\.in\/event\/view\/\d+/) ) {
 
 //評価ページなら
 if ( url.match(/\/joind\.in\/(?:talk\/view\/)?\d+/) ) {
-    $('input[name="private"]').parent().hide();
-
     replaceInside($('#comment_anonymously'), "anonymously", '匿名ユーザ');
+    replaceInside($('input[name="private"]').parent(), "Mark as private?", "スピーカーの人だけに見えるように投稿する");
     replaceInside($('input[name="anonymous"]').parent(), "Post anonymously?", "名前を伏せて投稿する");
     replaceInside($('label[for="rating"]'), "Rating", "評価を５段階で選択してください：");
     replaceInside($('label[for="comment"]'), function(html) {
