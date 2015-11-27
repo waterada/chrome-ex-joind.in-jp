@@ -133,6 +133,30 @@ if ( url.match(/\/joind\.in\/(?:talk\/view\/)?\d+/) ) {
         html = html.replace("Are you sure?", "続けて良い場合は 「Yes, Proceed」 を押してください。");
         return html;
     });
+    //以下、イベントが設置されているので、置き換える際には気をつけること。
+    var $faq = $('.toggle-faq');
+    replaceInside($faq.closest('.box').children('h4'), 'Speaker F.A.Q.', 'スピーカー向け FAQ');
+    replaceInside($faq.closest('.ctn').children('p'), function(html) {
+        html = html.replace('Congratulations! Your claim on this talk has been approved.', 'このトークの編集権は承認されました。');
+        html = html.replace('Here are some helpful tips on frequently asked question:', 'ここではよくある質問にお答えします：');
+        return html;
+    });
+    replaceInside($faq.find('li > .question'), function(html) {
+        html = html.replace('How do I add my slides?', '自分のスライドはどうやって追加する？');
+        html = html.replace('Where can I find more of my claimed talks?', '編集権のある他のトークはどこで見られる？');
+        html = html.replace('Am I allowed to comment on my talk?', '自分のトークにコメントしてもいいですか？');
+        return html;
+    });
+    replaceInside($faq.find('li > .answer'), function(html) {
+        html = html.replace('You can add or edit a link to your slides by going to the', 'このリンクから、スライドを追加/編集することができます：');
+        html = html.replace('for this talk and entering the URL for the slides.', '');
+        html = html.replace(/You can see a listing of all your claimed talks by visiting\s+the/, 'このリンクから編集権のあるすべてのトークの一覧を見ることができます：');
+        html = html.replace(/section of your account\s+page\./, '(あなたのアカウントページの中です)');
+        html = html.replace("Of course! While you won't be allowed to give it a rating,", 'もちろん！ ただし評価をすることはできませんよ。');
+        html = html.replace("feel free to discuss with the others giving their comments", '他のコメントと一緒に気軽にディスカッションしてください。');
+        html = html.replace("about your talk.", '');
+        return html;
+    });
 }
 
 //ログインページなら
