@@ -1,0 +1,17 @@
+{
+  "name": "joind.in 日本語化",
+  "version": "0.5",
+  "manifest_version": 2,
+  "description": "joind.in のサイトを日本語化します。",
+  "content_scripts": [
+    {
+       "matches": [
+          "*://joind.in/*"
+       ]
+      ,"js": ["jquery-2.1.4.min.js", "content_script.js"]
+    }
+  ],
+  "permissions": [
+     "*://joind.in/*"
+  ]
+}
