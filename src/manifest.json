@@ -1,12 +1,12 @@
 {
   "name": "joind.in 日本語化",
-  "version": "0.7",
+  "version": "0.8",
   "manifest_version": 2,
   "description": "joind.in のサイトを日本語化します。",
   "icons": {
-    "16":  "joind.in.icon.png",
-    "48":  "joind.in.icon.png",
-    "128": "joind.in.icon.png"
+    "16":  "joind.in.icon.mini.png",
+    "48":  "joind.in.icon.big.png",
+    "128": "joind.in.icon.big.png"
   },
   "content_scripts": [
     {
